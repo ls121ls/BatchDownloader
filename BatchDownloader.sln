@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchDownloader", "BatchDownloader\BatchDownloader.csproj", "{7B0C86C8-887D-4EA9-ADF0-77C0DCC56595}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchDownloaderWinform", "BatchDownloaderWinform\BatchDownloaderWinform.csproj", "{9B738A25-79A5-4692-AEEC-55C99BD8C40C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{7B0C86C8-887D-4EA9-ADF0-77C0DCC56595}.Debug|x86.Build.0 = Debug|x86
 		{7B0C86C8-887D-4EA9-ADF0-77C0DCC56595}.Release|x86.ActiveCfg = Release|x86
 		{7B0C86C8-887D-4EA9-ADF0-77C0DCC56595}.Release|x86.Build.0 = Release|x86
+		{9B738A25-79A5-4692-AEEC-55C99BD8C40C}.Debug|x86.ActiveCfg = Debug|x86
+		{9B738A25-79A5-4692-AEEC-55C99BD8C40C}.Debug|x86.Build.0 = Debug|x86
+		{9B738A25-79A5-4692-AEEC-55C99BD8C40C}.Release|x86.ActiveCfg = Release|x86
+		{9B738A25-79A5-4692-AEEC-55C99BD8C40C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

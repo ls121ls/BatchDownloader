@@ -7,3 +7,11 @@ D:\360data\重要数据\我的文档\Visual Studio 2010\Projects\BatchDownloader
 D:\360data\重要数据\我的文档\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\System.Net.Http.dll
 D:\360data\重要数据\我的文档\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\System.Net.Http.xml
 D:\360data\重要数据\我的文档\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\zh-Hans\System.Net.Http.resources.dll
+C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\BatchDownloader.exe.config
+C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\obj\x86\Debug\BatchDownloader.exe
+C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\obj\x86\Debug\BatchDownloader.pdb
+C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\BatchDownloader.exe
+C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\BatchDownloader.pdb
+C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\System.Net.Http.xml
+C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\zh-Hans\System.Net.Http.resources.dll
+C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\obj\x86\Debug\BatchDownloader.csprojResolveAssemblyReference.cache
