@@ -3,8 +3,6 @@ C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownload
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\bin\Debug\BatchDownloader.exe
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\bin\Debug\System.Net.Http.dll
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\bin\Debug\BatchDownloader.pdb
-C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\bin\Debug\System.Net.Http.xml
-C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\bin\Debug\zh-Hans\System.Net.Http.resources.dll
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\obj\x86\Debug\BatchDownloaderWinform.csprojResolveAssemblyReference.cache
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\obj\x86\Debug\BatchDownloaderWinform.Form1.resources
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\obj\x86\Debug\BatchDownloaderWinform.Properties.Resources.resources

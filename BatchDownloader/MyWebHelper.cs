@@ -28,14 +28,26 @@ namespace BatchDownloader
         //当前下载最大Id
         private static int maxId = 1;
 
+        private static List<string> strs = new List<string>(); 
+
         private static Object thisLock = new Object();
         private static Object thisLock1 = new Object();
         private static Object thisLock2 = new Object();
+
+        //下载方式，1是直接下载，2是通过文件下载
+        public static int DownloadType = 1;
 
         public static void StartDownload()
         {
             httpClient = new HttpClient();
             httpClient.Timeout = TimeSpan.FromSeconds(30);
+
+            if (DownloadType == 2)
+            {
+
+                strs = File.ReadAllLines("F://1/origion1.txt").ToList();
+                endIndex = strs.Count;
+            }
 
             maxId = strartIndex - 1;
             for (int i = 0; i < count; i++)
@@ -50,8 +62,7 @@ namespace BatchDownloader
 
         public static bool DownloadFile(object id)
         {
-            string str = "";
-            str = "http://www.wodexiaoshuo.com/txt/?txt-8689-" + id + "-14559-do.html";
+            string str = GetLinkStr(Convert.ToInt32(id));
             var st = httpClient.GetAsync(str);
             try
             {
@@ -60,13 +71,13 @@ namespace BatchDownloader
                 //如果小于800，即没有文件
                 if (stemp.Content.Headers.ContentLength < minLength)
                 {
-                    Log(id + "没有文件1");
+                    Log(id + "文件过小");
                     return true;
                 }
                 IEnumerable<String> sy;
                 if (!stemp.Content.Headers.TryGetValues("content-disposition", out sy))
                 {
-                    Log(id + "没有文件2");
+                    Log(id + "没有文件");
                     return true;
                 }
                 string s = sy.FirstOrDefault();
@@ -75,9 +86,9 @@ namespace BatchDownloader
                 File.WriteAllBytes("F://1/" + s, stemp.Content.ReadAsByteArrayAsync().Result);
                 lock (thisLock)
                 {
-                    File.AppendAllText("F://1/111下载.txt", id + "\r\n");
+                    File.AppendAllText("F://1/[下载].txt", id + "\r\n");
                 }
-                Log(id + "下载完成");
+                Log(id + "下载完成"+s);
                 return true;
             }
             catch (Exception e)
@@ -86,6 +97,20 @@ namespace BatchDownloader
                 myDelegate.BeginInvoke(id, Completed, null);
                 return false;
             }
+        }
+
+        public static string GetLinkStr(int id)
+        {
+            switch (DownloadType)
+            {
+                case 1:
+                    return "http://www.wodexiaoshuo.com/txt/?txt-8689-" + id + "-14559-do.html";
+                    break;
+                case 2:
+                    return strs[id];
+                    break;
+            }
+            return "";
         }
 
         static void Completed(IAsyncResult result)
@@ -112,7 +137,7 @@ namespace BatchDownloader
             Console.WriteLine(str);
             lock (thisLock1)
             {
-                File.AppendAllText("F://1/111日志.txt", str + "\r\n");
+                File.AppendAllText("F://1/[日志].txt", str + "\r\n");
             }
         }
 

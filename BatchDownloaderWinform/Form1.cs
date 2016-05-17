@@ -22,5 +22,11 @@ namespace BatchDownloaderWinform
         {
             MyWebHelper.StartDownload();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MyWebHelper.DownloadType = 2;
+            MyWebHelper.StartDownload();
+        }
     }
 }

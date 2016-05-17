@@ -13,5 +13,3 @@ C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownload
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\BatchDownloader.exe
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\BatchDownloader.pdb
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\System.Net.Http.xml
-C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\bin\Debug\zh-Hans\System.Net.Http.resources.dll
-C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloader\obj\x86\Debug\BatchDownloader.csprojResolveAssemblyReference.cache
