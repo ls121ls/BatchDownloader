@@ -60,6 +60,11 @@ namespace BatchDownloader
             }
         }
 
+        /// <summary>
+        /// 如果使用文件下载方式，把DownloadType设置为1
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static bool DownloadFile(object id)
         {
             string str = GetLinkStr(Convert.ToInt32(id));
@@ -86,7 +91,7 @@ namespace BatchDownloader
                 File.WriteAllBytes("F://1/" + s, stemp.Content.ReadAsByteArrayAsync().Result);
                 lock (thisLock)
                 {
-                    File.AppendAllText("F://1/[下载].txt", id + "\r\n");
+                    File.AppendAllText("F://1/[下载记录].txt", id + "\r\n");
                 }
                 Log(id + "下载完成"+s);
                 return true;
