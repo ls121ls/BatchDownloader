@@ -39,13 +39,14 @@ namespace BatchDownloader
         /// 文件下载方式
         /// </summary>
         /// <param name="args"></param>
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             httpClient = new HttpClient();
-            httpClient.Timeout = TimeSpan.FromMinutes(5);
+            httpClient.Timeout = TimeSpan.FromMinutes(7);
 
-            strs = File.ReadAllLines("F://1/origion1.txt").ToList();
+            strs = File.ReadAllLines("F://1/我的小说网.txt").ToList();
             endIndex = strs.Count;
+           // Console.WriteLine(endIndex);
 
             maxId = strartIndex - 1;
             for (int i = 0; i < count; i++)
@@ -63,14 +64,9 @@ namespace BatchDownloader
         private static Object thisLock2 = new Object();
         public static bool DownloadFile(object id)
         {
-            string str = "";
-            //str = "http://www.wodexiaoshuo.com/txt/?txt-8689-" + id + "-14559-do.html";
-            str = strs[Convert.ToInt32(id)];
-            if (String.IsNullOrEmpty(str))
-            {
-                return true;
-            }
-            var st = httpClient.GetAsync(str);
+            string[] str = strs[Convert.ToInt32(id)].Split(',');
+            string str1 = str[0];
+            var st = httpClient.GetAsync(str1);
             try
             {
                 Log("正在下载" + id);
@@ -84,12 +80,25 @@ namespace BatchDownloader
                 IEnumerable<String> sy;
                 if (!stemp.Content.Headers.TryGetValues("content-disposition", out sy))
                 {
-                    Log(id + "没有文件2");
-                    return true;
+                    string str2 = str[1];
+                    var temp = httpClient.GetAsync(str2).Result;
+                    myDelegate.BeginInvoke(id, Completed, null);
+                    Log(id + "下载异常，重新下载");
+                    return false;
                 }
                 string s = sy.FirstOrDefault();
                 //将乱码转换为正确的字符串
                 s = GetFileName(Encoding.GetEncoding("gbk").GetString(Encoding.GetEncoding("ISO-8859-1").GetBytes(s)));
+
+                s = s.Replace("/", "");
+                s = s.Replace("\\", "");
+                s = s.Replace("?", "");
+                s = s.Replace("*", "");
+                s = s.Replace("<", "");
+                s = s.Replace(">", "");
+                s = s.Replace(":", "");
+                s = s.Replace("\"", "");
+                s = s.Replace("|", "");
                 File.WriteAllBytes("F://1/" + s, stemp.Content.ReadAsByteArrayAsync().Result);
                 lock (thisLock)
                 {

@@ -17,7 +17,7 @@ namespace BatchDownloader
     class Program1
     {
         //起始页
-        static int strartIndex = 10000;
+        static int strartIndex = 500;
         //终止页
         static int endIndex = 30000;
 
@@ -27,15 +27,15 @@ namespace BatchDownloader
         //文件最小值
         static int minLength = 1;
         //线程数
-        private static int count = 1;
+        private static int count = 15;
 
         static MyDelegate myDelegate = new MyDelegate(DownloadFile);
         //当前下载最大Id
         private static int maxId = 1;
-        static void Main1(string[] args)
+        static void Main(string[] args)
         {
             httpClient = new HttpClient();
-            httpClient.Timeout = TimeSpan.FromSeconds(30);
+            httpClient.Timeout = TimeSpan.FromMinutes(10);
 
             maxId = strartIndex - 1;
             for (int i = 0; i < count; i++)
@@ -54,7 +54,7 @@ namespace BatchDownloader
         public static bool DownloadFile(object id)
         {
             string str = "";
-            str = "http://www.wodexiaoshuo.com/txt/?txt-8689-" + id + "-14559-do.html";
+            str = "http://www.001bz.top/download/download.php?filetype=txt&filename=" + id;
             var st = httpClient.GetAsync(str);
             try
             {

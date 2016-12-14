@@ -9,3 +9,4 @@ C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownload
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\obj\x86\Debug\BatchDownloaderWinform.csproj.GenerateResource.Cache
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\obj\x86\Debug\BatchDownloaderWinform.exe
 C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\obj\x86\Debug\BatchDownloaderWinform.pdb
+C:\Users\wer\Documents\Visual Studio 2010\Projects\BatchDownloader\BatchDownloaderWinform\bin\Debug\System.Net.Http.xml
