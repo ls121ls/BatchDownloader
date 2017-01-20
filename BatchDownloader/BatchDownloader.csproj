@@ -47,10 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyHelper.cs" />
+    <Compile Include="MyHttpClientHandler.cs" />
     <Compile Include="MyWebHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebClientHelper.cs" />
     <Compile Include="副本 Program.cs" />
+    <Compile Include="Program1.cs" />
+    <Compile Include="Program2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

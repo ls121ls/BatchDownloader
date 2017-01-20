@@ -14,10 +14,10 @@ using System.Web;
 
 namespace BatchDownloader
 {
-    class Program3
+    class Program2
     {
         //起始页
-        static int strartIndex = 200;
+        static int strartIndex = 1;
         //终止页
         static int endIndex = 50000;
 
@@ -31,7 +31,7 @@ namespace BatchDownloader
         static MyDelegate myDelegate = new MyDelegate(DownloadFile);
         //当前下载最大Id
         private static int maxId = 1;
-        static void Main3(string[] args)
+        static void Main(string[] args)
         {
 
             maxId = strartIndex - 1;
@@ -52,34 +52,19 @@ namespace BatchDownloader
         {
             string str = "";
             str = "http://www.11bz.org/modules/article/txtarticle.php?id=" + id;
-            //str = "http://m.001bz.in/download/download.php?filetype=txt&filename=" + id;
-            //HttpClient下载大文件容易报错
-            HttpClient httpClient = new HttpClient();
-            httpClient.Timeout = TimeSpan.FromMinutes(10);
-            var st = httpClient.GetAsync(str);
             try
             {
                 Log("正在下载" + id);
-                //var stemp = st.Result;
-                //如果小于800，即没有文件
                 WebRequest request = WebRequest.Create(str);
                 var temp=request.GetResponse().Headers;
-                StreamToFile(request.GetResponse().GetResponseStream(),"E://1.txt");
-                if (st.Result.Content.Headers.ContentLength < minLength)
-                {
-                    Log(id + "没有文件1");
-                    return true;
-                }
-                IEnumerable<String> sy;
-                if (!st.Result.Content.Headers.TryGetValues("content-disposition", out sy))
+                if (temp.GetValues("content-disposition")==null)
                 {
                     Log(id + "没有文件2");
                     return true;
                 }
-                string s = sy.FirstOrDefault();
-                //将乱码转换为正确的字符串
-                s = GetFileName(Encoding.GetEncoding("gbk").GetString(Encoding.GetEncoding("ISO-8859-1").GetBytes(s)));
-                File.WriteAllBytes("F://1/" + s, st.Result.Content.ReadAsByteArrayAsync().Result);
+                string fileName = GetFileName(Encoding.GetEncoding("gbk").GetString(Encoding.GetEncoding("ISO-8859-1").GetBytes(temp.GetValues("content-disposition").FirstOrDefault())));
+
+                StreamToFile(request.GetResponse().GetResponseStream(), "F://1/" + fileName);
                 lock (thisLock)
                 {
                     File.AppendAllText("F://1/111下载.txt", id + "\r\n");
